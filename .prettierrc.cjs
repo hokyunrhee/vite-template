@@ -7,6 +7,6 @@ module.exports = {
   tabWidth: 2,
   trailingComma: "es5",
   importOrderSeparation: false,
-  importOrder: ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@", "^[./]"],
+  importOrder: ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@", "", "^[./]"],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
 }
