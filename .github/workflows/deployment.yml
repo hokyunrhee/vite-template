@@ -1,0 +1,53 @@
+name: 🚀 Deploy
+
+on:
+  push:
+    branches: [develop]
+  workflow_run:
+    workflows: [Create a new release]
+    types: [completed]
+
+jobs:
+  staging:
+    name: Staging
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/develop' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: 🏗 Build application
+        run: npm run build
+
+      - name: 🚀 Deploy
+        run: |
+          echo "Staging"
+
+  production:
+    name: Production
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 📑 Retrieve version information
+        id: set_information
+        run: |
+          version=$(git log -1 --pretty=%B | egrep -o "v?[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+|$)")
+          echo "version=${version}" >> $GITHUB_OUTPUT
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: 🏗 Build application
+        run: npm run build
+
+      - name: 🚀 Deploy
+        run: |
+          echo "Production: ${{ steps.set_information.outputs.version }}"
