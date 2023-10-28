@@ -1,0 +1,11 @@
+import { describe, it } from "vitest"
+
+import { {{pascalCase name}} } from "../schemas/{{kebabCase name}}.schema"
+import { {{pascalCase name}}Model } from "./{{kebabCase name}}.model"
+
+describe("{{pascalCase name}}Model", () => {
+  it("creates {{pascalCase name}} successfully", () => {
+    const data = {} satisfies {{pascalCase name}}
+    new {{pascalCase name}}Model(data)
+  })
+})

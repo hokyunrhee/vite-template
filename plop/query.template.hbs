@@ -1,0 +1,11 @@
+import { useQuery } from "@tanstack/react-query"
+
+import { {{pascalCase name}}Model } from "../models/{{kebabCase name}}.model"
+import { {{pascalCase name}} } from "../schemas/{{kebabCase name}}.schema"
+
+export const use{{pascalCase name}} = () =>
+  useQuery({
+    queryKey: ["get", "{{kebabCase name}}"],
+    queryFn: () => fetch(`${import.meta.env.BASE_URL}/{{camelCase name}}`).then((res) => res.json() as {{pascalCase name}}),
+    select: (data) => new {{pascalCase name}}Model(data),
+  })

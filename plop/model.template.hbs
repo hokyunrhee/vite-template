@@ -1,0 +1,10 @@
+import { {{pascalCase name}}, {{camelCase name}}Schema } from "../schemas/{{kebabCase name}}.schema"
+
+export class {{pascalCase name}}Model {
+  #doc: {{pascalCase name}}
+
+  constructor(doc: {{pascalCase name}}) {
+    this.#doc = {} as {{pascalCase name}}
+    Object.assign(this, {{camelCase name}}Schema.parse(doc))
+  }
+}

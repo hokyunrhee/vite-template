@@ -1,0 +1,5 @@
+import { z } from "zod"
+
+export type {{pascalCase name}} = z.infer<typeof {{camelCase name}}Schema>
+
+export const {{camelCase name}}Schema = z.object({})
