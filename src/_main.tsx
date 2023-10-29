@@ -5,7 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 import { TailwindIndicator } from "@/components/tailwind-indicator.tsx"
 
-import App from "./App.tsx"
+import App from "./_app"
 
 import "./styles/globals.css"
 
