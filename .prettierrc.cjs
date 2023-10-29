@@ -21,7 +21,7 @@ module.exports = {
     "^[.]",
     "^[/]",
   ],
-  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  plugins: ["prettier-plugin-tailwindcss", "@ianvs/prettier-plugin-sort-imports"],
   importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
