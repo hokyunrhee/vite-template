@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "create:model": "plop model",
+    "analyze": "rollup-plugin-visualizer",
     "graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx src --exclude 'vite-env.d.ts' --image graph.svg"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "lint-staged": "^15.0.2",
     "plop": "^4.0.0",
     "prettier": "^3.0.3",
+    "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-tsconfig-paths": "^4.2.1",
