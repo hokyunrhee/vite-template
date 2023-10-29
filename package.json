@@ -16,7 +16,7 @@
     "coverage": "vitest run --coverage",
     "create:model": "plop model",
     "analyze": "rollup-plugin-visualizer",
-    "graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx src --exclude 'vite-env.d.ts' --image graph.svg"
+    "graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx src --exclude 'vite-env.d.ts|tailwind-indicator.tsx|test(.*)$' --ts-config ./tsconfig.json --image graph.svg"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
